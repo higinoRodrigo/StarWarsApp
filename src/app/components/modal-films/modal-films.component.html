@@ -1,5 +1,7 @@
 <div class="containerModal">
-  <p>{{ infos[1].opening_crawl }}</p>
+  <button (click)="closeModal()"><ion-icon name="arrow-back-outline" size="large"></ion-icon></button>
+  <h1>{{ opening.title }}</h1>
+  <h3>{{ opening.director }}</h3>
+  <p>{{ opening.opening_crawl }}</p>
 </div>
 
-<button (click)="closeModal()">Fechar Modal</button>

@@ -8,4 +8,5 @@ export interface StarWars{
   episode_id: number;
   opening_crawl: string;
   results: any[];
+  showCard: boolean;
 }

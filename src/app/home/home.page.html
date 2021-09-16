@@ -15,16 +15,15 @@
 
     <ion-card
       class="containerCard"
-      *ngFor="let dadosApi of infos"
-    >
-      <img loading="lazy" [attr.src]="imgsFunction(dadosApi.episode_id).url" (click)="modalJedi()"/>
+      *ngFor="let dadosApi of infos">
+      <img loading="lazy" [attr.src]="imgsFunction(dadosApi.episode_id).url" (click)="modalJedi(dadosApi)"/>
       <ion-card-header>
         <ion-card-subtitle>Director {{ dadosApi.director }}</ion-card-subtitle>
         <ion-card-title>{{ dadosApi.title }}</ion-card-title>
         <ion-card-title class="releaseDate">Release date {{ dadosApi.release_date | date:'dd/MM/yyyy'}}</ion-card-title>
       </ion-card-header>
-      <ion-icon name="rocket-outline" size="large" (click)="opening(dadosApi.episode_id)"></ion-icon>
-      <ion-card-content *ngIf="openingClick">{{ dadosApi.opening_crawl }}</ion-card-content>
+      <ion-icon name="rocket" size="large" (click)="opening(dadosApi.episode_id)"></ion-icon>
+      <ion-card-content *ngIf="dadosApi.showCard">{{ dadosApi.opening_crawl }}</ion-card-content>
     </ion-card>
 
   </div>
