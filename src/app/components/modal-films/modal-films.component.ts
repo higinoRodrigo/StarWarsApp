@@ -11,9 +11,7 @@ export class ModalFilmsComponent implements OnInit {
 
   constructor(public modal: ModalController) { }
 
-  ngOnInit() {
-    // console.log(this.opening);
-  }
+  ngOnInit() {}
 
   closeModal(){
     this.modal.dismiss();

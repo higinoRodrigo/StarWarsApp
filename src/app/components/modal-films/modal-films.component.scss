@@ -4,4 +4,16 @@
   width: 100%;
   height: 100%;
   padding: 1rem;
+  color: var(--ion-color-dark);
+
+}
+.btnReturn {
+  width: 50px;
+  margin-top: 1rem;
+  border-radius: 50%;
+  background-color: transparent;
+
+  .iconBtn {
+    color: var(--ion-color-primary);
+  }
 }

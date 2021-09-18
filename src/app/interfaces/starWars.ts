@@ -1,4 +1,8 @@
 /* eslint-disable @typescript-eslint/naming-convention */
+interface Personagens {
+  name: string;
+}
+
 export interface StarWars{
   imgs: string;
   url: string;
@@ -9,4 +13,5 @@ export interface StarWars{
   opening_crawl: string;
   results: any[];
   showCard: boolean;
+  personagens: Personagens[];
 }
