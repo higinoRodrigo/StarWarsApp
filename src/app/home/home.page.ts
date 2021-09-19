@@ -5,10 +5,6 @@ import { environment } from 'src/environments/environment';
 import { ModalFilmsComponent } from '../components/modal-films/modal-films.component';
 import { StarWars } from '../interfaces/StarWars';
 import { LoadingController } from '@ionic/angular';
-interface MyImgs {
-  url: string;
-  id: number;
-}
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -48,6 +44,7 @@ export class HomePage implements OnInit {
         alert(`Algo falhou, tente novamente ${error}`);
       }
       );
+
     };
 
 
@@ -71,14 +68,12 @@ export class HomePage implements OnInit {
   async modalJedi(dadosAPI: any){
     // loading inicia aqui
     const loading = await this.loadingController.create({
-      // spinner: null,
-      message: 'Navegando entre as galáxias, click fora para abortar a missão',
+      message: 'Navegando entre as galáxias, aguarde',
       translucent: true,
       cssClass: 'custom-class custom-loading',
       backdropDismiss: true
     });
     await loading.present();
-    //
 
     dadosAPI.personagens = [];
     // eslint-disable-next-line @typescript-eslint/prefer-for-of
@@ -87,9 +82,7 @@ export class HomePage implements OnInit {
       dadosAPI.personagens.push(p);
     }
 
-    // loading termina aqui
     await loading.dismiss();
-    //
 
     const modal = await this.modalController.create({
       component: ModalFilmsComponent,

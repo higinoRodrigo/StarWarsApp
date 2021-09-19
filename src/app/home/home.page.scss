@@ -1,49 +1,127 @@
-ion-icon {
-  font-size: 96px;
-}
-
-#container {
+ion-content{
   width: 100%;
   height: 100%;
+  margin: 0 auto;
+}
+
+ion-card-header{
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+ion-card{
+  animation: opacityText 2s linear;
+}
+
+ion-card-content.openingCard{
+  animation: opacityText 4s linear;
+
+  .openingCard{
+    opacity: 1;
+  }
+}
+
+.containerSlide{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 90%;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .containerCard {
+  width: 90%;
+  max-height: 600px;
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-bottom: 3rem;
+}
+img {
+  width: 300px;
+  height: 400px;
+  margin: 0 auto;
 
-  img {
-    width: 300px;
-    height: 400px;
-    margin: 0 auto;
-  }
-
-  .releaseDate {
-    font-size: 1rem;
-    color: #8d8d8d;
-    font-style: italic;
-    font-weight: normal;
-  }
-
-  .containerIcon {
-    display: flex;
-    justify-content: center;
-
-    .rocketIcon {
-      transition: 0.6s;
-      color: rgb(163, 76, 76);
-
-      &:active {
-        transform: scale(2);
-      }
-    }
-  }
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+span.informations{
+  margin: 0 auto;
+  font-size: .7rem;
+}
+.releaseDate {
+  font-size: 1rem;
+  color: #8d8d8d;
+  font-style: italic;
+  font-weight: normal;
 }
 
-.ocultItem{
-  display: none;
+.area_neon{
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(90deg);
+  margin-left: 10rem;
+  margin-top: -9rem;
+  margin-bottom: -9rem;
 }
-.ocultItem.active{
-  display: initial;
+.area_neon h1.neon{
+  display: block;
+  min-height: 220px;
+  margin: 0 auto;
+  margin: 0;
+  width: 10px;
+  background-color: white;
+  border-radius: 20px 20px 0 0 ;
+  box-sizing: content-box;
+
+  border: 3px solid #00FF6C;
+  box-shadow: 0 0 5px #00FF6C, 0 0 220px #00FF6C;
+  filter: blur(1px);
+  transition: all ease-in-out .3s;
+
+  transform: scaleY(0);
+  transform-origin: bottom center;
 }
-// <button></button><ion-icon name="rocket-outline" size="large"></ion-icon></button>
+.area_neon h1.neon.on{
+  transform: scaleY(1);
+
+  animation-name: lightAnim;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.handle{
+  margin: 0 auto;
+  height: auto;
+  width: 15px;
+  margin-top: -20px;
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
+}
+@keyframes lightAnim{
+  from{
+    box-shadow: 0 0 5px #00FF6C, 0 0 200px #00FF6C;
+  }
+  to{
+    box-shadow: 0 0 2px #00FF6C, 0 0 190px #00FF6C;
+  }
+}
+@keyframes opacityText{
+  0%{opacity:0;}
+  100%{opacity:1;}
+}

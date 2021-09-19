@@ -1,9 +1,14 @@
-<button class="btnReturn" (click)="closeModal()"><ion-icon name="arrow-back-outline" size="large" class="iconBtn"></ion-icon></button>
 <div class="containerModal">
-  <h1>{{ opening.title }}</h1>
-  <h3>{{ opening.director }}</h3>
-  <p>{{ opening.opening_crawl }}</p>
-  <p>{{ opening.personagens[0].name }}</p>
-  <p>{{ opening.personagens[1].name }}</p>
-  <p>{{ opening.personagens.length }}</p>
+  <button class="btnReturn" (click)="closeModal()"><ion-icon name="arrow-back-outline" size="large" class="iconBtn"></ion-icon></button>
+  <div id="containerOpening">
+    <p>{{ opening.opening_crawl }}</p>
+  </div>
 </div>
+
+
+
+<!-- <h1>{{ opening.title }}</h1>
+<h3>{{ opening.director }}</h3>
+<p>{{ opening.personagens[0].name }}</p>
+<p>{{ opening.personagens[1].name }}</p>
+<p>{{ opening.personagens.length }}</p> -->

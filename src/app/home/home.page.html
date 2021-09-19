@@ -1,25 +1,30 @@
 <ion-header [translucent]="true">
   <ion-toolbar collapse="condense">
-    <ion-title size="medium"> Star Wars Filmes </ion-title>
+    <ion-title size="medium"> Star Wars Films </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div id="container">
-    <ion-card
-      class="containerCard"
-      *ngFor="let dadosApi of infos">
-      <img loading="lazy" [attr.src]="imgsFunction(dadosApi.episode_id).url" (click)="modalJedi(dadosApi)"/>
-      <ion-card-header>
-        <ion-card-subtitle>Director {{ dadosApi.director }}</ion-card-subtitle>
-        <ion-card-title>{{ dadosApi.title }}</ion-card-title>
-        <ion-card-title class="releaseDate">Release date {{ dadosApi.release_date | date:'dd/MM/yyyy'}}</ion-card-title>
-      </ion-card-header>
-      <div class="containerIcon">
-        <ion-icon class="rocketIcon" src="assets/img/iconStarwars.svg"(click)="opening(dadosApi.episode_id)"></ion-icon>
-      </div>
-      <ion-card-content *ngIf="dadosApi.showCard">{{ dadosApi.opening_crawl }}</ion-card-content>
-    </ion-card>
-  </div>
+  <ion-slides pager="true">
+    <ion-slide class="containerSlide" *ngFor="let dadosApi of infos">
+      <ion-card class="containerCard">
+        <img loading="lazy" [attr.src]="imgsFunction(dadosApi.episode_id).url" (click)="modalJedi(dadosApi)"/>
+        <span class="informations">Click the image</span>
+        <ion-card-header>
+          <ion-card-title>{{ dadosApi.title }}</ion-card-title>
+          <ion-card-subtitle>Director {{ dadosApi.director }}</ion-card-subtitle>
+          <ion-card-subtitle>Episode {{ dadosApi.episode_id }}</ion-card-subtitle>
+          <ion-card-title class="releaseDate">Release date {{ dadosApi.release_date | date:'dd/MM/yyyy'}}</ion-card-title>
+        </ion-card-header>
+        <div class="area_neon">
+          <div>
+            <h1 id="box_neon" class="neon" [ngClass]="{'on' : dadosApi.showCard}" ></h1>
+            <img src="assets/img/handle.png" id="saberHandle" class="handle" (click)="opening(dadosApi.episode_id)"/>
+          </div>
+        </div>
+        <ion-card-content class="openingCard" *ngIf="dadosApi.showCard">{{ dadosApi.opening_crawl }}</ion-card-content>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
 </ion-content>
 
