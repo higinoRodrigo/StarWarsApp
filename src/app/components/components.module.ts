@@ -4,8 +4,6 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { ModalFilmsComponent } from './modal-films/modal-films.component';
 
-
-
 @NgModule({
   imports: [
     CommonModule,

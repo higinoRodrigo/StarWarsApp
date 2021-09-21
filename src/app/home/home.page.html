@@ -1,14 +1,8 @@
-<ion-header [translucent]="true">
-  <ion-toolbar collapse="condense">
-    <ion-title size="medium"> Star Wars Films </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-slides pager="true">
-    <ion-slide class="containerSlide" *ngFor="let dadosApi of infos">
+  <ion-slides pager="true" class="slideContainer">
+    <ion-slide class="contentSlide" *ngFor="let dadosApi of infos">
       <ion-card class="containerCard">
-        <img loading="lazy" [attr.src]="imgsFunction(dadosApi.episode_id).url" (click)="modalJedi(dadosApi)"/>
+        <img [attr.src]="imgsFunction(dadosApi.episode_id).url" (click)="modalJedi(dadosApi)"/>
         <span class="informations">Click the image</span>
         <ion-card-header>
           <ion-card-title>{{ dadosApi.title }}</ion-card-title>
@@ -18,13 +12,25 @@
         </ion-card-header>
         <div class="area_neon">
           <div>
-            <h1 id="box_neon" class="neon" [ngClass]="{'on' : dadosApi.showCard}" ></h1>
-            <img src="assets/img/handle.png" id="saberHandle" class="handle" (click)="opening(dadosApi.episode_id)"/>
+            <h1
+              id="box_neon"
+              class="neon"
+              [ngClass]="{'on' : dadosApi.showCard}"
+            ></h1>
+            <img
+              src="assets/img/handle.png"
+              id="saberHandle"
+              class="handle"
+              (click)="opening(dadosApi.episode_id)"
+            />
           </div>
         </div>
-        <ion-card-content class="openingCard" *ngIf="dadosApi.showCard">{{ dadosApi.opening_crawl }}</ion-card-content>
+        <ion-card-content
+          class="openingCard"
+          *ngIf="dadosApi.showCard"
+          >{{ dadosApi.opening_crawl }}</ion-card-content
+        >
       </ion-card>
     </ion-slide>
   </ion-slides>
 </ion-content>
-

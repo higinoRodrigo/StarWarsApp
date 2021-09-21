@@ -24,3 +24,38 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+ion-content{
+  --background: black;
+  --color: white;
+  background: black;
+  color: white;
+}
+ion-header{
+  --background: black;
+  --color: white;
+  background: black;
+  color: white;
+}
+ion-toolbar{
+  --background: black;
+  --color: white;
+  background: black;
+  color: white;
+}
+ion-card{
+  --background: rgb(26, 26, 26);
+  --color: white;
+  background: rgb(26, 26, 26);
+  color: white;
+}
+ion-title{
+  --color: white;
+  color: white;
+
+}
+ion-card-title{
+  --color: white;
+  color: white;
+}

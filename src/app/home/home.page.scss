@@ -1,3 +1,8 @@
+ion-slides.slideContainer {
+  background: linear-gradient(0, #001400, #000000);
+  height: 100%;
+}
+
 ion-content{
   width: 100%;
   height: 100%;
@@ -14,6 +19,7 @@ ion-card-header{
 
 ion-card{
   animation: opacityText 1s linear;
+  background: linear-gradient(0, #001400, #000000);
 }
 
 ion-card-content.openingCard{
@@ -24,7 +30,7 @@ ion-card-content.openingCard{
   }
 }
 
-.containerSlide{
+.contentSlide{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,7 +43,7 @@ ion-card-content.openingCard{
 
 .containerCard {
   width: 90%;
-  max-height: 600px;
+  max-height: 700px;
   display: flex;
   flex-direction: column;
   cursor: pointer;
@@ -60,6 +66,7 @@ img {
 span.informations{
   margin: 0 auto;
   font-size: .7rem;
+  color: rgb(88, 88, 88);
 }
 .releaseDate {
   font-size: 1rem;
