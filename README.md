@@ -20,7 +20,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - Ionic
 - Angular
 - TypeScript
-- CSS
+- SCSS
 - HTML
 
 ## 💻 Projeto
