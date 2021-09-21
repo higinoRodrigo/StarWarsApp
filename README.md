@@ -10,7 +10,7 @@
 <br>
 
 <p align="center">
-  <img alt="gif do teste pesquisando perfil github" src="https://j.gifs.com/qQZEZG.gif" width="50%">
+  <img alt="gif do projeto" src="src/assets/img/gif.gif" width="50%">
 </p>
 
 ## 🚀 Tecnologias
